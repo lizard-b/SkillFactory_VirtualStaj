@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'perevalDB'
+    'perevalDB',
     'rest_framework',
     'django_filters',
     'drf_spectacular',
