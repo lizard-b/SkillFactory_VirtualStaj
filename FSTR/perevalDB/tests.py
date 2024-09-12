@@ -28,9 +28,9 @@ class TouristApiTestCase(APITestCase):
         serializer_data = TouristSerializer([self.user_1, self.user_2], many=True).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(len(serializer_data), 2)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(len(serializer_data), 2)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
     def test_get_detail(self):
         url = reverse('tourist-detail', args=(self.user_1.id,))
@@ -38,8 +38,8 @@ class TouristApiTestCase(APITestCase):
         serializer_data = TouristSerializer(self.user_1).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
 
 class CoordinatesApiTestCase(APITestCase):
@@ -53,9 +53,9 @@ class CoordinatesApiTestCase(APITestCase):
         serializer_data = CoordinatesSerializer([self.coords_1, self.coords_2], many=True).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(len(serializer_data), 2)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(len(serializer_data), 2)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
     def test_get_detail(self):
         url = reverse('coordinates-detail', args=(self.coords_1.id,))
@@ -63,8 +63,8 @@ class CoordinatesApiTestCase(APITestCase):
         serializer_data = CoordinatesSerializer(self.coords_1).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
 
 class LevelApiTestCase(APITestCase):
@@ -78,9 +78,9 @@ class LevelApiTestCase(APITestCase):
         serializer_data = LevelSerializer([self.lvl_1, self.lvl_2], many=True).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(len(serializer_data), 2)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(len(serializer_data), 2)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
     def test_get_detail(self):
         url = reverse('level-detail', args=(self.lvl_1.id,))
@@ -88,8 +88,8 @@ class LevelApiTestCase(APITestCase):
         serializer_data = LevelSerializer(self.lvl_1).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
 
 class PerevalApiTestCase(APITestCase):
@@ -123,9 +123,9 @@ class PerevalApiTestCase(APITestCase):
         serializer_data = PerevalSerializer([self.pereval_1, self.pereval_2], many=True).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(len(serializer_data), 2)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(len(serializer_data), 2)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
     def test_get_detail(self):
         url = reverse('pereval-detail', args=(self.pereval_1.id,))
@@ -133,8 +133,8 @@ class PerevalApiTestCase(APITestCase):
         serializer_data = PerevalSerializer(self.pereval_1).data
         print(serializer_data)
         print(response.data)
-        self.assertEquals(serializer_data, response.data)
-        self.assertEquals(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(serializer_data, response.data)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
 
 
 class TouristSerializerTestCase(TestCase):
@@ -169,7 +169,7 @@ class TouristSerializerTestCase(TestCase):
                 'phone': '89210000002'
             }
         ]
-        self.assertEquals(serializer_data, expected_data)
+        self.assertEqual(serializer_data, expected_data)
 
 
 class CoordinatesSerializerTestCase(TestCase):
@@ -192,7 +192,7 @@ class CoordinatesSerializerTestCase(TestCase):
                 'elevation': 222
             }
         ]
-        self.assertEquals(serializer_data, expected_data)
+        self.assertEqual(serializer_data, expected_data)
 
 
 class LevelSerializerTestCase(TestCase):
@@ -217,7 +217,7 @@ class LevelSerializerTestCase(TestCase):
                 'autumn': '2A'
             }
         ]
-        self.assertEquals(serializer_data, expected_data)
+        self.assertEqual(serializer_data, expected_data)
 
 
 class PerevalSerializerTestCase(TestCase):
@@ -293,7 +293,7 @@ class PerevalSerializerTestCase(TestCase):
             }
         ]
 
-        self.assertEquals(serializer_data, expected_data)
+        self.assertEqual(serializer_data, expected_data)
 
 
 # Create your tests here.
